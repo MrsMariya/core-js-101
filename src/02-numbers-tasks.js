@@ -86,8 +86,8 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
-function getLinearEquationRoot(/* a, b */) {
-  throw new Error('Not implemented');
+function getLinearEquationRoot(a, b) {
+  return (b * (-1)) / a;
 }
 
 
@@ -109,8 +109,11 @@ function getLinearEquationRoot(/* a, b */) {
  *   (0,1) (0,1)     => 0
  *   (0,1) (1,2)     => 0
  */
-function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getAngleBetweenVectors(x1, y1, x2, y2) {
+  const firstVector = Math.atan2(x1, y1);
+  const secondVector = Math.atan2(x2, y2);
+  const result = firstVector - secondVector;
+  return Math.abs(result);
 }
 
 /**
@@ -125,8 +128,8 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(/* value */) {
-  throw new Error('Not implemented');
+function getLastDigit(value) {
+  return value % 10;
 }
 
 
@@ -201,8 +204,13 @@ function roundToPowerOfTen(/* num, pow */) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+function isPrime(n) {
+  for (let i = 2; i < n; i += 1) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return n > 1;
 }
 
 /**
